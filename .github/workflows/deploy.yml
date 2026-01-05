@@ -15,7 +15,8 @@ jobs:
         with:
           caching: 'false'
       - name: Output dependency cache status
-        run: echo "Used cache: ${{ steps.cache-deps.outputs.used-cache }}"
+        run: |
+          echo "Used cache: ${{ steps.cache-deps.outputs.used-cache }}"
       - name: Lint code
         run: npm run lint
   test:
